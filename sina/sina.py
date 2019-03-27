@@ -1,3 +1,5 @@
+# 这里需要使用getpass模块才能使输入密码不可见
+import getpass
 import requests
 import hashlib
 import time
@@ -36,6 +38,7 @@ def get_login(phone, pwd):
 
 if __name__ == '__main__':
     phone = input("你输入你的账号:")
-    pwd = input("请输入你的密码：")
+    # 这里输入密码不可见
+    pwd = getpass.getpass("password:")
 
     get_login(phone, pwd)
